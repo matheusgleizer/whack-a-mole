@@ -1,0 +1,557 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100vw;
+    overflow: hidden;
+
+    .container1 {
+        background-image: url("/images/scenario.jpg");
+        background-size: center;
+        background-position-y: 80%;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+
+        .container-top {
+            padding-top: 30px;
+            height: 45vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .score-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                .score {
+                    width: auto;
+                    padding-top: 100px;
+                    padding-right: 10px;
+                    font-size: 50px;
+                    color: white;
+                }
+            }
+        }
+
+        .container-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-top: 5%;
+            height: 50vh;
+
+            a:hover {
+                cursor: crosshair;
+            }
+
+            .hole {
+                background-color: black;
+                border-radius: 100%;
+
+            }
+
+            .top {
+                padding-top: 2%;
+                width: 50vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                .top-square {
+                    width: 5vw;
+                    height: 5vh;
+                    position: relative;
+                    overflow: hidden;
+
+                    .hole-top {
+                        min-width: 45px;
+                        width: 5vw;
+                        height: 1vh;
+                        position: absolute;
+                        top: 4vh;
+
+                        .trump {
+                            position: absolute;
+                            top: 1vh;
+                            width: 5vw;
+                            height: 5vh;
+                            background: center / 70% no-repeat url("/images/happyTrump.png");
+                        }
+
+                    }
+                }
+
+            }
+
+            .middle {
+                padding-bottom: 5%;
+                width: 70vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                .middle-square {
+                    position: relative;
+                    width: 10vw;
+                    height: 10vh;
+                    overflow: hidden;
+
+                    .hole-middle {
+                        min-width: 60px;
+                        width: 10vw;
+                        height: 2vh;
+                        position: absolute;
+                        top: 8vh;
+
+                        .trump {
+                            position: absolute;
+                            top: 2vh;
+                            width: 10vw;
+                            height: 10vh;
+                            background: center / 70% no-repeat url("/images/happyTrump.png");
+                        }
+
+                    }
+                }
+            }
+
+            .bottom {
+                width: 99vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                .bottom-square {
+                    position: relative;
+                    width: 15vw;
+                    height: 15vh;
+                    overflow: hidden;
+
+                    .hole-bottom {
+                        min-width: 75px;
+                        width: 15vw;
+                        height: 3vh;
+                        position: absolute;
+                        top: 12vh;
+
+                        .trump {
+                            position: absolute;
+                            width: 15vw;
+                            height: 15vh;
+                            top: 3vh;
+                            background: center / 70% no-repeat url("/images/happyTrump.png");
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.base-timer {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+
+@media (min-width: 768px) and (orientation: landscape) {
+    body {
+        .container1 {
+            background-size: cover;
+
+            .container-bottom {
+                position: absolute;
+                bottom: 3vh;
+            }
+        }
+    }
+
+}
+
+
+.a {
+    animation: trumpA infinite linear;
+}
+
+
+@keyframes trumpA {
+    0% {
+        top: 1vh;
+    }
+
+    30% {
+        top: 1vh;
+    }
+
+    40% {
+        top: 1vh;
+    }
+
+    50% {
+        top: 1vh;
+    }
+
+    60% {
+        top: 0vh;
+    }
+
+    70% {
+        top: -1vh;
+    }
+
+    80% {
+        top: -4vh;
+    }
+
+    90% {
+        top: -1.5vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+
+}
+
+.b {
+    animation: trumpB infinite linear;
+}
+
+@keyframes trumpB {
+    0% {
+        top: 1vh;
+    }
+
+    30% {
+        top: 1vh;
+    }
+
+    40% {
+        top: 1vh;
+    }
+
+    50% {
+        top: 1vh;
+    }
+
+    60% {
+        top: 0vh;
+    }
+
+    70% {
+        top: -1vh;
+    }
+
+    80% {
+        top: -4vh;
+    }
+
+    90% {
+        top: -1.5vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+}
+
+.c {
+    animation: trumpC infinite linear;
+}
+
+@keyframes trumpC {
+    0% {
+        top: 1vh;
+    }
+
+    30% {
+        top: 1vh;
+    }
+
+    40% {
+        top: 1vh;
+    }
+
+    50% {
+        top: 1vh;
+    }
+
+    60% {
+        top: 0vh;
+    }
+
+    70% {
+        top: -1vh;
+    }
+
+    80% {
+        top: -4vh;
+    }
+
+    90% {
+        top: -1.5vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+}
+
+.d {
+    animation: trumpD infinite linear;
+}
+
+@keyframes trumpD {
+    0% {
+        top: 2vh;
+    }
+
+    25% {
+        top: 2vh;
+    }
+
+    50% {
+        top: -4vh;
+    }
+
+    75% {
+        top: -8vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+}
+
+.e {
+    animation: trumpE infinite linear;
+}
+
+@keyframes trumpE {
+    0% {
+        top: 2vh;
+    }
+
+    25% {
+        top: 2vh;
+    }
+
+    50% {
+        top: -4vh;
+    }
+
+    75% {
+        top: -8vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+}
+
+.f {
+    animation: trumpF infinite linear;
+}
+
+@keyframes trumpF {
+    0% {
+        top: 2vh;
+    }
+
+    25% {
+        top: 2vh;
+    }
+
+    50% {
+        top: -4vh;
+    }
+
+    75% {
+        top: -8vh;
+    }
+
+    100% {
+        top: 1vh;
+    }
+}
+
+.g {
+    animation: trumpG infinite linear;
+}
+
+@keyframes trumpG {
+    0% {
+        top: 3vh;
+    }
+
+    30% {
+        top: 3vh;
+    }
+
+    40% {
+        top: 0vh;
+    }
+
+    50% {
+        top: -5vh;
+    }
+
+    60% {
+        top: -8vh;
+    }
+
+    70% {
+        top: -12vh;
+    }
+
+    80% {
+        top: -8vh;
+    }
+
+    90% {
+        top: -5vh;
+    }
+
+    100% {
+        top: 3vh;
+    }
+}
+
+.h {
+    animation: trumpH infinite linear;
+}
+
+@keyframes trumpH {
+    0% {
+        top: 3vh;
+    }
+
+    30% {
+        top: 3vh;
+    }
+
+    40% {
+        top: 0vh;
+    }
+
+    50% {
+        top: -5vh;
+    }
+
+    60% {
+        top: -8vh;
+    }
+
+    70% {
+        top: -12vh;
+    }
+
+    80% {
+        top: -8vh;
+    }
+
+    90% {
+        top: -5vh;
+    }
+
+    100% {
+        top: 3vh;
+    }
+}
+
+.i {
+    animation: trumpI infinite linear;
+}
+
+@keyframes trumpI {
+    0% {
+        top: 3vh;
+    }
+
+    30% {
+        top: 3vh;
+    }
+
+    40% {
+        top: 0vh;
+    }
+
+    50% {
+        top: -5vh;
+    }
+
+    60% {
+        top: -8vh;
+    }
+
+    70% {
+        top: -12vh;
+    }
+
+    80% {
+        top: -8vh;
+    }
+
+    90% {
+        top: -5vh;
+    }
+
+    100% {
+        top: 3vh;
+    }
+}
