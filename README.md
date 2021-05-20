@@ -1,6 +1,6 @@
 # Whack-A-Mole
 
-A funny recreation of the emblematic game Whack-A-Mole.
+The emblematic game Whack-A-Mole now with a new target. Have fun :)
 
 This game was written in Vanilla JavaScript, HTML and CSS.
 
