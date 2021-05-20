@@ -15,13 +15,13 @@ function hitTrump(index) {
     if (score == 9) {
         // document.querySelector('.score-container').innerHTML += `<div style = "width: auto; padding-top: 50px; padding-right: 10px; font-size: 50px;color: white; display: inline-block">You Win!</div>`;
         document.querySelector(".container-top").innerHTML = `<div style = "width: auto; padding-top: 200px; padding-right: 10px; font-size: 50px;color: white; display: inline-block">You Win!</div>`;
-        document.querySelector(".container-top").style.backgroundImage = `url("/images/joeBiden.jpg")`;
+        document.querySelector(".container-top").style.backgroundImage = `url("../../images/joeBiden.jpg")`;
         document.querySelector(".container-top").style.backgroundSize = `cover`;
         document.querySelector(".container-top").style.backgroundPosition = `center`;
         // document.querySelector(".container-top").style.backgroundRepeat = `no=repeat`;
     }
     trumps[index].style.animationDuration = (((Math.random() * 2) + 1)).toString() + 's';
-    trumps[index].style.backgroundImage = `url("/images/angryTrump.png")`;
+    trumps[index].style.backgroundImage = `url("../../images/angryTrump.png")`;
     trumps[index].style.pointerEvents = "none";
 }
 
@@ -54,7 +54,7 @@ const COLOR_CODES = {
     }
 };
 
-const TIME_LIMIT = 5;
+const TIME_LIMIT = 20;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
