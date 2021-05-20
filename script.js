@@ -15,7 +15,7 @@ function hitTrump(index) {
     if (score == 9) {
         // document.querySelector('.score-container').innerHTML += `<div style = "width: auto; padding-top: 50px; padding-right: 10px; font-size: 50px;color: white; display: inline-block">You Win!</div>`;
         document.querySelector(".container-top").innerHTML = `<div style = "width: auto; padding-top: 200px; padding-right: 10px; font-size: 50px;color: white; display: inline-block">You Win!</div>`;
-        document.querySelector(".container-top").style.backgroundImage = `url("../../images/joeBiden.jpg")`;
+        document.querySelector(".container-top").style.backgroundImage = `url("/images/joeBiden.jpg")`;
         document.querySelector(".container-top").style.backgroundSize = `cover`;
         document.querySelector(".container-top").style.backgroundPosition = `center`;
         // document.querySelector(".container-top").style.backgroundRepeat = `no=repeat`;
@@ -88,7 +88,7 @@ startTimer();
 
 function onTimesUp() {
     clearInterval(timerInterval);
-    window.location.replace(window.location.protocol + "/gameover.html");
+    window.location.replace(window.location.protocol + "/whack-a-mole/gameover.html");
 }
 
 function startTimer() {
